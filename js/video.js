@@ -28,6 +28,7 @@ async function getChannelInfo(channelId) {
 
 // 태그간 유사도 확인
 async function getSimilarity(firstWord, secondWord) {
+  // const openApiURL = "http://aiopen.etri.re.kr:8000/WiseWWN/WordRel";
   const openApiURL = "http://aiopen.etri.re.kr:8000/WiseWWN/WordRel";
   const requestJson = { argument: { first_word: firstWord, second_word: secondWord } };
 
