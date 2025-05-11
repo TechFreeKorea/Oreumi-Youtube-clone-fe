@@ -36,8 +36,7 @@ async function getSimilarity(firstWord, secondWord) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // Authorization: process.env.API_KEY,
-        Authorization: "84fc9029-2ecd-477e-9c8e-ffa929e32c2b"
+        Authorization: process.env.API_KEY,
       },
       body: JSON.stringify(requestJson),
     });
