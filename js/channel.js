@@ -5,7 +5,7 @@ let channelId = url.searchParams.get("channelId"); // 채널 ID
 
 // 비디오 리스트 정보 가져오기
 async function getVideoList(channelId) {
-  let response = await fetch(`http://techfree-oreumi-api.kro.kr:5000/video/getChannelVideoList?channel_id=${channelId}`);
+  let response = await fetch(`https://www.techfree-oreumi-api.ai.kr/video/getChannelVideoList?channel_id=${channelId}`);
   let videoListData = await response.json();
   return videoListData;
 }
@@ -20,7 +20,7 @@ if (channelId) {
 
 // 각 비디오 정보
 async function getVideoInfo(videoId) {
-  let url = `http://techfree-oreumi-api.kro.kr:5000/video/getVideoInfo?video_id=${videoId}`;
+  let url = `https://www.techfree-oreumi-api.ai.kr/video/getVideoInfo?video_id=${videoId}`;
   let response = await fetch(url);
   let videoData = await response.json();
   return videoData;
@@ -28,7 +28,7 @@ async function getVideoInfo(videoId) {
 
 // 채널 정보
 async function getChannelInfo(channelId) {
-  const response = await fetch(`http://techfree-oreumi-api.kro.kr:5000/channel/getChannelInfo?id=${channelId}`, {
+  const response = await fetch(`https://www.techfree-oreumi-api.ai.kr/channel/getChannelInfo?id=${channelId}`, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   });
@@ -38,7 +38,7 @@ async function getChannelInfo(channelId) {
 // 채널 내 영상정보
 async function getChannelVideo() {
   let response = await fetch(
-    `http://techfree-oreumi-api.kro.kr:5000/video/getChannelVideo?video_channel=${channelId}`
+    `https://www.techfree-oreumi-api.ai.kr/video/getChannelVideo?video_channel=${channelId}`
   );
   let videoListData = await response.json();
   return videoListData;

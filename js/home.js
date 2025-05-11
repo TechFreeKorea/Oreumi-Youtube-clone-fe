@@ -4,14 +4,14 @@ getVideoList().then(createVideoItem);
 
 // 비디오 리스트 정보
 async function getVideoList() {
-  let response = await fetch("http://techfree-oreumi-api.kro.kr:5000/video/getVideoList");
+  let response = await fetch("https://www.techfree-oreumi-api.ai.kr/video/getVideoList");
   let videoListData = await response.json();
   return videoListData;
 }
 
 // 각 비디오 정보
 async function getVideoInfo(videoId) {
-  let url = `http://techfree-oreumi-api.kro.kr:5000/video/getVideoInfo?video_id=${videoId}`;
+  let url = `https://www.techfree-oreumi-api.ai.kr/video/getVideoInfo?video_id=${videoId}`;
   let response = await fetch(url);
   let videoData = await response.json();
   return videoData;
@@ -27,7 +27,7 @@ async function getChannelInfo(channelName) {
     return channelCache[channelName];
   }
 
-  let url = `http://techfree-oreumi-api.kro.kr:5000/channel/getChannelInfo?id=${encodeURIComponent(channelName)}`;
+  let url = `https://www.techfree-oreumi-api.ai.kr/channel/getChannelInfo?id=${encodeURIComponent(channelName)}`;
 
   let response = await fetch(url, {
     method: "GET",

@@ -9,17 +9,17 @@ const tagCache = {};
 
 // API 호출 함수들
 async function getVideoList() {
-  const response = await fetch("http://techfree-oreumi-api.kro.kr:5000/video/getVideoList");
+  const response = await fetch("https://www.techfree-oreumi-api.ai.kr/video/getVideoList");
   return response.json();
 }
 
 async function getVideoInfo(videoId) {
-  const response = await fetch(`http://techfree-oreumi-api.kro.kr:5000/video/getVideoInfo?video_id=${videoId}`);
+  const response = await fetch(`https://www.techfree-oreumi-api.ai.kr/video/getVideoInfo?video_id=${videoId}`);
   return response.json();
 }
 
 async function getChannelInfo(channelId) {
-  const response = await fetch(`http://techfree-oreumi-api.kro.kr:5000/channel/getChannelInfo?id=${encodeURIComponent(channelId)}`, {
+  const response = await fetch(`https://www.techfree-oreumi-api.ai.kr/channel/getChannelInfo?id=${encodeURIComponent(channelId)}`, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   });
@@ -280,7 +280,7 @@ async function renderVideoList(videoList) {
 async function loadChannelVideos(channelId) {
   showLoadingSpinner();
 
-  const response = await fetch(`http://techfree-oreumi-api.kro.kr:5000/video/getChannelVideoList?channel_id=${encodeURIComponent(channelId)}`, {
+  const response = await fetch(`https://www.techfree-oreumi-api.ai.kr/video/getChannelVideoList?channel_id=${encodeURIComponent(channelId)}`, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   });
